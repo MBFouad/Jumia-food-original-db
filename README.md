@@ -17,24 +17,22 @@ Alternative installation is possible without local dependencies relying on [Dock
 To install with [Docker](https://www.docker.com), run following commands:
 
 ```
-git clone git@github.com:MBFouad/task-ACID.git
-cd tas-ACID
+git clone https://github.com/MBFouad/Jumia-food-original-db.git
+cd Jumia-food-original-db
 cp .env.example .env
 docker-compose up -d
 docker-compose exec main php artisan key:generate
-docker-compose exec main php artisan migrate
-docker-compose exec main php artisan db:seed
 open browser and type http://localhost:8888
 ``` 
 
 ### manual install
 Clone the repository
 
-    git clone git@github.com:MBFouad/task-ACID.git
+    git clone https://github.com/MBFouad/Jumia-food-original-db.git
 
 Switch to the repo folder
 
-    cd task-ACID
+    cd Jumia-food-original-db
 
 Install all the dependencies using composer
 
@@ -52,29 +50,22 @@ Run unit test
 
     php artisan test
 
-Run the database migrations (**Set the database connection in .env before migrating**)
-
-    php artisan migrate
 
 Start the local development server
 
-    php artisan serve
+    php artisan serve --port=8888
 
-You can now access the server at http://127.0.0.1:8000
+You can now access the server at http://localhost:8888
 
 **TL;DR command list**
 
-    git clone git@github.com:MBFouad/task-ACID.git
+    git clone https://github.com/MBFouad/Jumia-food-original-db.git
     cd tas-ACID
     composer install
     cp .env.example .env
     php artisan key:generate
     php artisan test
-    
-**Make sure you set the correct database connection information before running the migrations** [Environment variables](#environment-variables)
-
-    php artisan migrate
-    php artisan serve
+    php artisan serve --port=8888
 
     
 
@@ -112,22 +103,8 @@ You can now access the server at http://127.0.0.1:8000
 
 Run the laravel development server
 
-    php artisan serve
+    php artisan serve --port=8888
 
 The api can now be accessed at
 
-   - http://localhost:8000 - import and list products 
-   - http://localhost:8000/cache - cache product (cache resets after create new product)
-   
-# Testing API
-
-Run the laravel development server
-
-    php artisan serve
-
-The api can now be accessed at
-
-   - http://localhost:8000/api/products/import - import csv 
-   - http://localhost:8000/api/products/show/Hydra - get one by name contain
-   - http://localhost:8000/api/products/show/3 - get one by id 
-   - http://localhost:8000/api/products/all - get all
+   - http://localhost:8888 - customers phones
