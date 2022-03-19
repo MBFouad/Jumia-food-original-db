@@ -22,6 +22,7 @@ cd Jumia-food-original-db
 cp .env.example .env
 docker-compose up -d
 docker-compose exec main php artisan key:generate
+docker-compose exec main php artisan test
 open browser and type http://localhost:8888
 ``` 
 
